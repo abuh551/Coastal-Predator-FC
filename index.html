@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Coastal Predator FC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="crest" aria-label="Home"><span>CP</span></button>
+        <div class="club-title"><strong>COASTAL</strong><span>PREDATOR FC</span></div>
+        <button class="icon-button" id="notify" aria-label="Notifications">⌁<i></i></button>
+      </header>
+
+      <main>
+        <section id="home" class="screen active">
+          <p class="eyebrow">NEXT FIXTURE <span>• MATCHDAY 04</span></p>
+          <div class="hero-card">
+            <div class="hero-noise"></div>
+            <div class="hero-top"><span>THU 17 SEP</span><b>21:30</b><span>TRUFF ARENA</span></div>
+            <div class="versus">
+              <div class="team-mark coastal-mark">CP</div><div class="team-name">COASTAL<br><strong>PREDATOR</strong></div>
+              <div class="vs">VS</div>
+              <div class="team-name align-right">RED<br><strong>PHANTOMS</strong></div><div class="team-mark opponent-mark">RP</div>
+            </div>
+            <div class="hero-bottom"><span>FUTSAL · 5 A SIDE</span><button class="small-action" data-target="match">MATCH CENTRE →</button></div>
+          </div>
+
+          <div class="section-head"><h2>Matchday squad</h2><button data-target="match">Manage <span>→</span></button></div>
+          <section class="squad-status">
+            <div class="availability"><strong id="availableCount">8</strong><span>available</span></div>
+            <div class="player-stack" id="playerStack"></div>
+            <button class="round-plus" id="quickAdd" aria-label="Add player">+</button>
+          </section>
+
+          <div class="section-head"><h2>Club pulse</h2><span class="live"><i></i> LIVE</span></div>
+          <section class="pulse-grid">
+            <article class="pulse-card standings"><span>LEAGUE POSITION</span><strong>03</strong><b>TOP 3 <em>↑ 2</em></b></article>
+            <article class="pulse-card record"><span>SEASON RECORD</span><strong>11 <small>W</small> · 3 <small>L</small></strong><div class="form"><i></i><i></i><i></i><i class="loss"></i><i></i></div></article>
+          </section>
+          <section class="practice-banner" data-target="practice"><div class="cone">▲</div><div><span>UP NEXT</span><strong>WEDNESDAY TRAINING</strong><small>20:00 · Seaview Courts</small></div><b>→</b></section>
+        </section>
+
+        <section id="match" class="screen">
+          <p class="eyebrow">MATCH CENTRE</p>
+          <div class="page-title"><h1>Matchday<br><em>is calling.</em></h1><p>Build the squad, set the tone.</p></div>
+          <div class="match-info"><div><span>OPPONENT</span><strong>RED PHANTOMS</strong></div><div><span>DATE & TIME</span><strong>THU 17 · 21:30</strong></div><div><span>VENUE</span><strong>TRUFF ARENA</strong></div></div>
+          <div class="pitch-wrap"><div class="pitch-lines"></div><div class="pitch-label">SELECTED STARTING FIVE</div><div id="pitchPlayers" class="pitch-players"></div></div>
+          <div class="section-head selection-head"><h2>Squad selection</h2><span id="selectedText">5 / 10 selected</span></div>
+          <div id="squadList" class="squad-list"></div>
+          <button class="primary-button" id="saveSquad">SAVE MATCHDAY SQUAD <span>→</span></button>
+        </section>
+
+        <section id="practice" class="screen">
+          <p class="eyebrow">TRAINING GROUND</p>
+          <div class="page-title"><h1>Get sharp.<br><em>Stay ruthless.</em></h1><p>Every touch counts before matchday.</p></div>
+          <article class="training-card"><div class="training-date"><b>WED</b><strong>18</strong><span>SEP</span></div><div><span>NEXT SESSION</span><h3>HIGH INTENSITY<br>FINISHING</h3><p>20:00 — 21:30 · Seaview Courts</p></div><button class="check-in" id="checkIn">CHECK IN</button></article>
+          <div class="section-head"><h2>Weekly schedule</h2><button id="addPractice">+ Add session</button></div>
+          <div id="practiceList" class="practice-list"></div>
+          <section class="training-note"><span>COACH'S NOTE</span><p>“The difference is in the details. Arrive early, leave nothing in the tank.”</p><b>— Maqbool Galsulkar</b></section>
+        </section>
+
+        <section id="team" class="screen">
+          <p class="eyebrow">THE PACK <span>• 2024/25</span></p>
+          <div class="page-title"><h1>Predators<br><em>never hunt alone.</em></h1><p>10 players. One badge. No excuses.</p></div>
+          <div class="team-filter"><button class="filter active">ALL</button><button class="filter">ATTACK</button><button class="filter">DEFENCE</button></div>
+          <div id="teamGrid" class="team-grid"></div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav">
+        <button class="nav-link active" data-target="home"><span>⌂</span>Home</button>
+        <button class="nav-link" data-target="match"><span>◉</span>Matchday</button>
+        <button class="nav-link" data-target="practice"><span>△</span>Practice</button>
+        <button class="nav-link" data-target="team"><span>♙</span>Team</button>
+      </nav>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="app.js?v=3"></script>
+  </body>
+</html>

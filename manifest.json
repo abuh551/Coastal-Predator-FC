@@ -1,0 +1,9 @@
+{
+  "name": "Coastal Predator FC",
+  "short_name": "CPFC",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#f21d2f",
+  "description": "Matchday, squad and training hub for Coastal Predator FC."
+}
